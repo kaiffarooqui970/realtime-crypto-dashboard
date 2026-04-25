@@ -90,6 +90,41 @@ This project demonstrates **end-to-end data engineering** skills by building a r
 
 ---
 
-## 📁 Project Structure
 
-ealtime-crypto-dashboard/ │ ├── 📂 src/ │ ├── 🐍 dashboard.py # Streamlit UI & visualizations │ ├── 🐍 data_streamer.py # WebSocket & REST data ingestion │ ├── 🐍 database.py # Thread-safe SQLite operations │ └── 🐍 utils.py # Helper functions & formatters │ ├── 📂 tests/ │ └── 🧪 test_database.py # Unit tests │ ├── 🐳 Dockerfile # Container configuration ├── 📋 requirements.txt # Python dependencies └── 📖 README.md
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.11+
+- pip or conda
+- Docker (optional)
+
+### Option 1: Local Development
+
+```bash
+# Clone the repository
+git clone [github.com](https://github.com/yourusername/realtime-crypto-dashboard.git)
+cd realtime-crypto-dashboard
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Launch the dashboard
+streamlit run src/dashboard.py
+# Build the image
+docker build -t crypto-dashboard .
+
+# Run the container
+docker run -p 8501:8501 crypto-dashboard
+[localhost](http://localhost:8501)
+# Run all tests
+pytest tests/ -v
+
+# Run with coverage
+pytest tests/ --cov=src --cov-report=html
